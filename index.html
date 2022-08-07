@@ -10,7 +10,7 @@
 </head>
 
 <body class="main-layout">
-    <div class="main-screen full main-layout" onclick="onToggleMenu()"></div>
+    <div class="main-screen full main-layout" onclick="onCloseBars()"></div>
     <header class="main-header-container full main-layout">
         <div class="main-header flex space-between align-center">
             <div class="logo">Blogin<span class="dot">.</span></div>
@@ -18,14 +18,21 @@
                 <ul class="main-nav-list flex  align-center clean-list">
                     <li class="flex"><a href="#">Journal</a></li>
                     <li class="flex"><a href="#">About</a></li>
-                    <li class="flex"><a href="#">About</a></li>
+                    <li class="flex"><a href="#">Work</a></li>
                     <li class="flex"><a href="#">Contact</a></li>
                 </ul>
             </nav>
-            <button class="menu-btn" onclick="onToggleMenu()">☰</button>
+            <button class="menu-btn" onclick="onOpenMenu()">☰</button>
         </div>
     </header>
-
+<div class="modal flex align-center">
+    <h3>Join us to get access to the latest stories!</h3>
+    <form action="">
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" placeholder="Enter your email here"/><br>
+        <button onclick="onSubmit(event)">Submit</button>
+    </form>
+</div>
     <main class="main-content">
         <div class="blank"></div>
         <section class="card flex">
@@ -41,7 +48,7 @@
                 <p class="card-txt2"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat
                     nulla pariatur...</p>
-                <button class="card-btn">Continue reading</button>
+                <button class="card-btn" onclick="onShowModal()">Continue reading</button>
             </article>
         </section>
 
@@ -56,7 +63,7 @@
                     ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <p class="card-txt2"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur...</p>
-                <button class="card-btn">Continue reading</button>
+                <button class="card-btn" onclick="onShowModal()">Continue reading</button>
             </article>
         </section>
 
@@ -72,7 +79,7 @@
                 </p>
                 <p class="card-txt2"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                     eu fugiat nulla pariatur...</p>
-                <button class="card-btn">Continue reading</button>
+                <button class="card-btn" onclick="onShowModal()">Continue reading</button>
             </article>
         </section>
         <div class="page-btns-container flex space-between align-center">

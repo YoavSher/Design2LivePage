@@ -70,7 +70,6 @@ h2 {
 img {
     width: 100%;
     height: 100%;
-    /* padding-inline-end: 40px; */
 }
 
 p {
@@ -147,9 +146,10 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(0 0 0 / 73%);
+    background-color: rgba(0, 0, 0, 0.648);
     cursor: pointer;
     display: none;
+    z-index: 22;
 }
 
 .main-header-container {
@@ -223,6 +223,7 @@ a {
     position: relative;
     transition: padding 0.4s;
     cursor: pointer;
+    z-index: 10;
 }
 
 .card-btn:hover {
@@ -255,6 +256,7 @@ a {
 
 .main-content .page-btns-container .page-btn:hover {
     cursor: pointer;
+    color: var(--clr1);
 }
 
 .main-footer-container {
@@ -330,7 +332,55 @@ a {
     content: '\f17d';
 }
 
+.modal {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: var(--clrMainFooter);
+    position: fixed;
+    z-index: 24;
+    transform: translateX(100%);
+    font-family: Lato-bold;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5em;
+}
 
+body.modal-open .modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal h3 {
+    padding-bottom: 3em;
+}
+
+[name=email]{
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.modal button {
+    padding: 0.75em 1.5625em;
+    font-family: Lato-bold;
+    /* font-size: 1em; */
+    background-color: #ffffff;
+    color: var(--clrBtns);
+    border: 2px solid var(--clrBtns);
+    border-radius: 2em;
+    /* transition: padding 0.4s; */
+    cursor: pointer;
+}
+
+.modal button:hover {
+    color: var(--clr1);
+    border-color: var(--clr1);
+    /* padding-inline-end: 2.6em; */
+}
 
 /* VIEWS */
 
@@ -346,6 +396,7 @@ a {
         min-width: 150px;
         transform: translateX(100%);
         transition: transform 0.6s;
+        z-index: 26;
     }
 
     body.menu-open .main-nav-list {
@@ -356,11 +407,11 @@ a {
 
     }
 
-    body.menu-open .main-screen{
+    body.menu-open .main-screen {
         display: block;
     }
-    
-    
+
+
     .main-header .main-nav-list a {
         border: none;
         color: #ffffff;
@@ -396,6 +447,10 @@ a {
 
     html {
         font-size: 14px;
+    }
+
+    .card .card-img {
+        object-fit: cover;
     }
 
     .main-header {
@@ -439,6 +494,16 @@ a {
         white-space: inherit;
         overflow: inherit;
 
+    }
+
+    .modal {
+        width: 500px;
+        height: 700px;
+        
+    }
+
+        body.modal-open .main-screen {
+        display: block;
     }
 }
 
